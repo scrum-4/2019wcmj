@@ -136,7 +136,7 @@ init_mathjax();
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='簡介.html'>簡介</a><li><a href='目錄結構.html'>目錄結構</a><li class='has-children'><a href='頁面編輯.html'>頁面編輯</a><ul class='dropdown'><li class='has-children'><a href='插入程式碼.html'>插入程式碼</a><ul class='dropdown'><li><a href='Java 程式碼.html'>Java 程式碼</a><li><a href='Python 程式碼.html'>Python 程式碼</a><li><a href='C或C++程式碼.html'>C或C++程式碼</a><li><a href='Lua 程式碼.html'>Lua 程式碼</a><li><a href='Javascript 程式碼.html'>Javascript 程式碼</a><li><a href='Html 原始碼.html'>Html 原始碼</a></li></li></ul></ul><li><a href='網際簡報.html'>網際簡報</a><li><a href='網誌編輯.html'>網誌編輯</a><li><a href='已知錯誤.html'>已知錯誤</a></li>
+                     <li><a href='近端配置與管理.html'>近端配置與管理</a></li>
                       </ul>
                 </nav>
               </div>
@@ -147,35 +147,27 @@ init_mathjax();
           </div>
           
         </header>
-    <div id="tipue_search_content">C或C++程式碼 << <a href='C或C++程式碼.html'>Previous</a> <a href='Javascript 程式碼.html'>Next</a> >> Javascript 程式碼<br /><h1>Lua 程式碼</h1>
-<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">-- 導入 js 模組
-js = require("js")
--- 取得 window
-window = js.global
--- 猜小於或等於 n 的整數
-big = 100
--- 計算猜測次數, 配合 while 至少會猜一次
-num = 1
--- 利用 window:prompt 方法回應取得使用者所猜的整數
-guess = window:prompt("請猜一個介於 1 到 "..big.." 的整數")
--- 利用數學模組的 random 函數以亂數產生答案
-answer = math.random(big)
-output = ""
--- 若沒猜對, 一直猜到對為止
-while answer ~= tonumber(guess) do
-    if answer &gt; tonumber(guess) then
-        output = "猜第 "..num.." 次, guess="..guess..", answer="..answer.." - too small"
-        print(output)
-    else
-        output = "猜第 "..num.." 次, guess="..guess..", answer="..answer.." - too big"
-        print(output)
-    end 
-    guess = window:prompt(output..", 請猜一個介於 1 到 "..big.." 的整數")
-    num = num + 1
-end
-print("總共猜了 "..num.." 次, answer=guess="..answer.." - correct")
-    </pre>
-<p></p><br />C或C++程式碼 << <a href='C或C++程式碼.html'>Previous</a> <a href='Javascript 程式碼.html'>Next</a> >> Javascript 程式碼</div>
+    <div id="tipue_search_content"> <br /><h1>近端配置與管理</h1>
+<p>windows network setting</p>
+<p>chrome proxy</p>
+<p><img caption="false" height="512" src="./../images/rundll32_Ys3MydhCmh.png" width="400"/></p>
+<p><img caption="false" height="249" src="./../images/ZoomIt64_G8B2fkTfHP.png" width="400"/></p>
+<p>firefox proxy</p>
+<p>mde.tw</p>
+<p>github.com</p>
+<p>portable programming system</p>
+<p>portablegit - remove helper = manager</p>
+<p>login github add repository - README.md</p>
+<p>git clone  self-repo and CMSimfly</p>
+<p>y:\home\.gitconfig</p>
+<p>git config --global user.name "scrum-4"<br/>git config --global user.email "scrum4@mde.tw"<br/>git config --global http.proxy <a href="http://140.130.17.3:3128">http://140.130.17.3:3128</a></p>
+<p>git add .</p>
+<p>git commit -m "commit description"</p>
+<p>git push</p>
+<p>Github Pages - setting, url</p>
+<p>local python wsgi.py</p>
+<p>ssh vs https (y:\home\.ssh\config)</p>
+<p>.git/config (url = <a href="mailto:git@github.com:scrum-4/2019wcmj.git">git@github.com:scrum-4/2019wcmj.git</a>)</p><br /> </div>
         
     <!-- footer -->
       <div class="container">
