@@ -1,4 +1,5 @@
 <h1>近端配置與管理</h1>
+<p>W14 個人主機 IP 回報表: <a href="https://ethercalc.org/x36z3srfqiv3">https://ethercalc.org/x36z3srfqiv3</a></p>
 <p>windows network setting</p>
 <p>chrome proxy</p>
 <p><img caption="false" height="512" src="/images/rundll32_Ys3MydhCmh.png" width="400"/></p>
@@ -18,8 +19,7 @@
 <p>Github Pages - setting, url</p>
 <p>local python wsgi.py</p>
 <p>ssh vs https (y:\home\.ssh\config)</p>
-<p>.git/config (url = <a href="mailto:git@github.com:scrum-4/2019wcmj.git">git@github.com:scrum-4/2019wcmj.git</a>)</p>
-<h1>W14</h1>
+<p>.git/config (url = <a href="mailto:git@github.com:scrum-4/2019wcmj.git">git@github.com:scrum-4/2019wcmj.git</a>)</p><h1>W14</h1>
 <p><a href="/downloads/0896-learning-twitter-bootstrap.pdf">bootstrap.pdf</a></p>
 <p><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/pypAmDkxEDY" width="560"></iframe></p>
 <p><img alt="" height="757" src="/images/explorer_VO5THUfpy9.png" width="627"/></p>
@@ -72,6 +72,60 @@ circle_x = flag_w/4
 circle_y = flag_h/4
 # 先畫滿地紅
 ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script>
+<p><canvas height="400" id="plotarea2" width="600"></canvas></p>
+<script type="text/python">
+# 導入 doc
+from browser import document as doc
+import math
+
+# 準備繪圖畫布
+canvas = doc["plotarea2"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 127, 80)'
 ctx.fillRect(0,0,flag_w,flag_h)
 # 再畫青天
 ctx.fillStyle='rgb(0, 0, 150)'
